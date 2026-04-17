@@ -1,6 +1,20 @@
 # ReaGeo
 
-Open-source dataset for ReaGeo paper
+**ReaGeo: Reasoning-Enhanced End-to-End Geocoding with LLMs**
+
+Official dataset for the ReaGeo paper
+
+## About
+
+ReaGeo is an end-to-end geocoding framework based on large language models, designed to overcome the limitations of traditional multi-stage approaches. The method converts geographic coordinates into geohash sequences, reformulating the coordinate prediction task as a text generation problem, and introduces a Chain-of-Thought (CoT) mechanism to enhance the model's reasoning over spatial relationships.
+
+### Key Features
+
+- **End-to-End Framework**: Eliminates workflow complexity and error propagation from traditional retrieval-based methods
+- **Chain-of-Thought Reasoning**: Enhances spatial relationship reasoning through intermediate reasoning steps
+- **Geohash Sequence Generation**: Converts coordinate prediction into text generation
+- **Reinforcement Learning**: Uses distance-deviation-based reward (GRPO) to optimize generation accuracy
+- **Versatile Geocoding**: Handles explicit address queries, vague relative location queries, and non-point geometric regions
 
 ## Dataset
 
@@ -29,21 +43,24 @@ Each sample contains the following fields:
 }
 ```
 
-### Description
+### Dataset Description
 
-The dataset includes both original location information and offset location information with directional descriptions, suitable for geocoding tasks that require spatial reasoning.
+The dataset includes both original location information and offset location information with directional descriptions. This design supports the Chain-of-Thought training approach, where the model learns spatial reasoning through relative positional relationships before generating geohash sequences. The dataset is suitable for:
+
+- Single-point geocoding with explicit addresses
+- Vague relative location query resolution
+- Spatial reasoning and neighborhood knowledge learning
+- End-to-end geocoding model training
 
 ## Citation
 
 If you use this dataset in your research, please cite our paper:
 
 ```bibtex
-@article{reageo2026,
-  title={ReaGeo: [Paper Title]},
-  author={[Authors]},
-  journal={[Journal/Conference Name]},
+@article{cui2026reageo,
+  title={ReaGeo: Reasoning-Enhanced End-to-End Geocoding with LLMs},
+  author={Cui, Jian and Ren, Zhiyuan and Weng, Desheng and Zhao, Yongqi and Wenbin, Gong and Lei, Yu and Dong, Zhenning},
+  journal={arXiv preprint},
   year={2026}
 }
 ```
-
-Please replace the placeholder information with the actual paper details.
